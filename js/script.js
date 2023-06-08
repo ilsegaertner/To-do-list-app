@@ -1,3 +1,35 @@
+let li = $('<li></li>');
+li.append('<li>some item</li>');
+let inputValue = $('#input').val;
+let text = $
+
+// try again________________
+
+//1
+
+let li = $('<li id="input"></li>');
+let inputValue = $('#input').val;
+$ ('body').append(li);  
+
+if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    let list = $('#list');
+    list.appendChild(li);
+  }
+
+//2
+
+li.on ("click", function (){
+    li.toggleClass("strike")
+});
+
+//3
+let crossOutButton = $('crossOutButton');
+deleteButton.append(document.createTextNode('X'));
+
+
+___________________
 // JQuery
 
 
