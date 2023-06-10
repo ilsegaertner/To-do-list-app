@@ -1,61 +1,41 @@
-/*let li = $('<li></li>');
-li.append('<li>some item</li>');
-let inputValue = $('input').val;
-let text = $('inputValue');
-
-*/
-// try again________________
-
 //1
 
+
+function newItem(){
+
 let li = $('<li></li>');
-li.append('<li></li>');
-let inputValue = $('input').val;
-//$('inputValue').append('input').val;
-let text = $('<span>').text(inputValue);
-li.append(text);
+let inputValue = $('#input').val();
+li.append(inputValue);
+
+let list = $('#list');
 
 if (inputValue === '') {
     alert("You must write something!");
   } else {
-    let list = $('list');
-    list.appendChild(li);
+    list.append (li);
   }
 
 
 //2
+function crossOut () {
+  li.toggleClass("strike");
+}
 
-li.on ("click", function (){
-    li.toggleClass("strike")
+li.on ("click", function crossOut(){
+  li.toggleClass("strike");
 });
 
 //3
-let crossOutButton = $('crossOutButton');
-deleteButton.append(document.createTextNode('X'));
+let crossOutButton = $('<crossOutButton></crossOutButton>');
+crossOutButton.append(document.createTextNode('X'));
+li.append(crossOutButton);
 
+crossOutButton.on ("click", deleteListItem);
+function deleteListItem () {
+  li.addClass("delete")
+}
 
-___________________
-// JQuery
+//4
+$('#list').sortable();
 
-/*
-$('#list')
-let list = $('#list');
-let li = $('<li></li>');
-li.addClass("strike");
-list.append(li); //or: list.append("<li>list something</li>");
-
-
-crossing out by clicking on it 
-li.on("click", function() {
-    li.addClass("strike");
-});
-
-
-$('#input').val;
-let inputValue = $('#input').val;
-
-li.append(inputValue);
-
-adding class to display:none 
-li.addClass("delete");
-*/
+}
